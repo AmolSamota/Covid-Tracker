@@ -60,6 +60,7 @@ const buildChartData = (data, casesType) => {
     }
     lastDataPoint = data[casesType][date];
   }
+  // console.log(data[casesType]);
   return chartData;
 };
 
@@ -75,7 +76,7 @@ function LineGraph({ casesType }) {
         .then((data) => {
           let chartData = buildChartData(data, casesType);
           setData(chartData);
-          console.log(chartData);
+          // console.log(casesType);
           // buildChart(chartData);
         });
     };
@@ -85,7 +86,7 @@ function LineGraph({ casesType }) {
 
   return (
     <div>
-      {data?.length > 0 && (
+      {data?.length > 0  && (
         <Line
           data={{
             datasets: [
